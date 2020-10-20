@@ -1,0 +1,45 @@
+.titulo {
+ text-align: center;
+ text-transform: uppercase;
+ text-decoration: underline;
+ background-color:  rgb(160, 236, 160);
+ font-family: 'Times New Roman', Times, serif;
+
+}
+
+
+.Mapa{
+    display : flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    
+}
+
+.FilhosDoMapa{
+    border : 15px solid white
+}
+
+
+.ListaPersonagem{
+   height: 25px;
+   width: 15px;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+}
+
+li{
+    list-style: none;
+}
+
+.Personagens{ 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+
+}
+
+
+

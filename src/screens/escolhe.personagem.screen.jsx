@@ -1,30 +1,35 @@
-import React from 'react'
+
+import React from 'react';
+import '../screens/escolhe-personagem.css';
 
 
 function EscolhePersonagem() {
     function Titulo() {
-        return <h1>Player Select</h1>
+        return <h1 className="titulo">Player Select</h1>
     }
     function MapaMundi(pais) {
-        return <> 
-        <h1>{pais.nome}</h1></>
+        return <p>{pais.nome}</p>
     }
 
-    function ListaPersonagens({personagens}) {
+    function ListaPersonagens({ personagens }) {
         return personagens.map((personagemSelecionado) => {
-        return <> {personagemSelecionado.nome} </>
+            return  <div className = 'Personagens'>
+                 {personagemSelecionado.nome}
+           
+                </div> 
         })
-        }
-    
-    function Personagem() {
+    }
+
+    function Personagem({posicao,selecionado}) {
         return <>
-            <span> Salve</span>
-            <h1>Oi</h1>
+            <h1>{posicao == 'left' ?  'P1' : 'P2'}</h1>
+    <p>{selecionado == 'p1' ? 'Ryu' : 'Ken'}</p>
+    <img src="" alt="Imagem do Personagem Selecionado"/>
         </>
     }
-    function Paises({pais}) {
+    function Paises({ pais }) {
         return pais.map((Bandeira) => {
-           return <> {Bandeira.nome} </> 
+            return <div className = 'Mapa'>{Bandeira.nome}</div>
         })
     }
     const p1 = {}
@@ -46,7 +51,7 @@ function EscolhePersonagem() {
         imagem: null
     },
     {
-        nome: 'U.S.A',
+        nome: 'Spain',
         imagem: null
     },
     {
@@ -68,14 +73,36 @@ function EscolhePersonagem() {
     {
         nome: 'Ken',
         imagem: null
-    }]
+    }, {
+        nome: 'Dhalsin',
+        imagem: null
+    }, {
+        nome: 'Guile',
+        imagem: null
+    }, {
+        nome: 'Zangief',
+        imagem: null
+    }, {
+        nome: 'Chun-Li',
+        imagem: null
+    }, {
+        nome: 'Vega',
+        imagem: null
+    }, {
+        nome: 'Honda',
+        imagem: null
+    }
+
+    ]
     return <>
         <Titulo />
-        <ListaPersonagens personagens={personagens} />
-        <Personagem posicao='left' selecionado={p1} />
-        <Personagem posicao='right' selecionado={p2} />
         <MapaMundi />
-        <Paises pais ={paises} />
+        <Paises pais={paises} />
+        <Personagem posicao ='left' selecionado='p1' />
+        <Personagem posicao ='right' selecionado='p2' />
+        <ListaPersonagens personagens={personagens} />
+
+
     </>
 }
 
