@@ -1,8 +1,8 @@
 import React from 'react'
 
 function ListaPersonagens({ personagens }) {
-    return personagens.map((personagemSelecionado) => {
-        return  <div>
+    return personagens.map((personagemSelecionado,index) => {
+        return  <div key={index}>
              {personagemSelecionado.nome}
        
             </div> 

@@ -1,8 +1,8 @@
 import React from 'react'
 
 function Paises({ pais }) {
-    return pais.map((Bandeira) => {
-        return <h1>{Bandeira.nome}</h1>
+    return pais.map((bandeira) => {
+        return <div><h2 key={index}>{bandeira.nome}</h2></div>
     })
 }
 
